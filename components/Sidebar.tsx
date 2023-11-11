@@ -1,10 +1,11 @@
 "use client";
 
 import { cn } from '@/lib/utils';
-import {Home , Plus, Settings,Rocket} from 'lucide-react'
+import {Home , Plus, Settings,Rocket, Folder, Bookmark, GitFork, Trash2, Info} from 'lucide-react'
 import { Poppins } from 'next/font/google';
 import Link from 'next/link';
 import { usePathname , useRouter} from 'next/navigation';
+import { Button } from './ui/button';
 //import { useRouter } from 'next/router';
 
 
@@ -23,10 +24,28 @@ export const Sidebar = () =>{
             pro: false
         },
         {
-            icon: Plus,
-            href: "/companion/new",
-            label: "Create",
+            icon: Folder,
+            href: "/files",
+            label: "All files",
             pro: true
+        },
+        {
+            icon: Bookmark,
+            href: "/saved",
+            label: "Saved",
+            pro:false
+        },
+        {
+            icon: GitFork,
+            href: "/integration",
+            label: "Integrations",
+            pro: false
+        },
+        {
+            icon: Trash2,
+            href: "/deleted",
+            label: "Trash",
+            pro:false
         },
         {
             icon: Settings,
@@ -35,11 +54,12 @@ export const Sidebar = () =>{
             pro: false
         },
         {
-            icon: Rocket,
-            href: "/upgrade",
-            label: "Upgrade",
+            icon: Info,
+            href: "/help",
+            label: "Help and Support",
             pro: false
         }
+       
 
 
     ];
@@ -70,15 +90,15 @@ export const Sidebar = () =>{
                     </h1>
                 </Link>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-1 ">
                     {routes.map((route)=> (
                         <div
                          onClick={() => onNavigate(route.href , route.pro)}
                         key={route.href} className={cn(
-                            "text-muted-foreground text-base group flex pt-5 pb-5 w-full items-start  font-medium cursor-pointer hover:text-primary hover:bg-primary/10 rounded-lg transition",
+                            "text-muted-foreground text-sm group flex pt-3 pb-3 w-full items-start  font-medium cursor-pointer hover:text-primary hover:bg-primary/10 rounded-lg transition",
                             pathname === route.href && "bg-primary/10 text-primary"
                         )}>
-                            <div className="flex ml-5 space-x-4 gap-y-2 items-center flex-1">
+                            <div className="flex ml-5 space-x-4 gap-y-2 items-center flex-1 ">
                                 <div>
                                 <route.icon className="h-6 w-6"/>
                                 </div>
@@ -89,15 +109,22 @@ export const Sidebar = () =>{
                         </div>
                     ))}
                 </div>
-                <div className='flex-col ml-5 mb-2 mt-20 w-[200px] h-[200px] bg-slate-700'>
-                    <div className='ml-[80px] pt-12 '>
+                <div className='flex-col ml-5 mb-2 mt-[65px] w-[200px] h-[200px] bg-primary/10 rounded'>
+                    <div className=' pt-12 '>
                         {arr.map((obj)=>(
                             <div>
-                            <div >
+                            <div className='ml-[80px] justify-center'>
                                 <obj.icon className="h-8 w-8 "/>
                             </div>
-                            <div>
-                                {obj.label}
+                            <div className='text-base ml-7 mt-2 text-primary'>
+                                Upgrade Account
+                            </div>
+                            <div className='text-xs ml-2 mt-2 text-muted-foreground'>
+                                Access to unlimited transcription
+                            </div>
+                            <div className='mt-4 ml-[50px]'>
+                                
+                               <Button className='hover:bg-blue-400'>{obj.label}</Button> 
                             </div>
                             </div>
                         ))}
