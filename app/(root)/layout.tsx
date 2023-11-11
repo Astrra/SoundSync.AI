@@ -14,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import TranscribeButton from '@/components/transcribe';
 
 const RootLayout = ({
     children
@@ -22,10 +23,10 @@ const RootLayout = ({
 }) => {
   return (
     <div className="h-full">
-        <Navbar/>
-        <div className="hidden md:flex mt-16 w-20 flex-col fixed inset-y-0">
+        {/*<Navbar/>*/}
+        <div className="hidden md:flex mt-0 w-200 ml-0 flex-col fixed inset-y-0 h-full">
           <Sidebar/>
-          
+           <Navbar/>
         </div>
         
         <main className="md:pl-20 pt-16 h-full">

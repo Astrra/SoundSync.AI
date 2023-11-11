@@ -7,6 +7,7 @@ import { Input } from './ui/input';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useDebounce } from '@/hooks/use-debounce';
 
+
 const SearchInput = () => {
   const router = useRouter();
   const searchParams= useSearchParams();
@@ -41,7 +42,7 @@ const SearchInput = () => {
         <Input
         onChange={onChange}
         value={value}
-        placeholder='Search...'
+        placeholder='Search here...'
         className='pl-10 bg-primary-10'
         />
     </div>

@@ -17,22 +17,14 @@ const font = Poppins({
 
 export const Navbar = () => {
     return (
-        <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4  bg-secondary h-16">
+        <div className="fixed ml-[250px] w-10/12 z-50 flex justify-between items-center py-2 px-4  bg-secondary h-16 mt-2">
             <div className="flex items-center">
                 <MobileSidebar/>
-                <Link href="/">
-                    <h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-primary", 
-                    font.className
-                    )}>
-                        soundsync.ai
-                    </h1>
-                </Link>
-
             </div>
-            <div className="justify-items-stretch">
+            <div className="mr-[850px]">
                 <SearchInput/>
             </div>
-            <div className="flex items-center gap-x-3">
+            <div className="flex items-center gap-x-3 mr-3">
                 
                 <ModeToggle/>
                 <UserButton afterSignOutUrl="/"/>
