@@ -43,7 +43,7 @@ const SearchInput = () => {
         onChange={onChange}
         value={value}
         placeholder='Search here...'
-        className='pl-10 bg-primary-10'
+        className='pl-10 bg-inherit '
         />
     </div>
   )
