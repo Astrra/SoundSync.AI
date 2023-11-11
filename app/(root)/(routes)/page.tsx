@@ -14,8 +14,8 @@ const page = async () => {
       <div className='text-2xl'>
         Welcome {user?.firstName},
       </div>
-      <Button>Transcribe File</Button>
-       {/* <TranscribeButton/>*/}  
+      {/*<Button>Transcribe File</Button>*/}
+        <TranscribeButton/>  
     </div>
     <div className='flex-col ml-[220px] text-muted-foreground'>
         Upload your audio or video to convert it to text

@@ -109,7 +109,7 @@ export const Sidebar = () =>{
                         </div>
                     ))}
                 </div>
-                <div className='flex-col ml-5 mb-2 mt-[65px] w-[200px] h-[200px] bg-primary/10 rounded'>
+                <div className='flex-col ml-5 mb-2 mt-[65px] w-[200px] h-[200px] bg-primary/10 hover:bg-primary/5 rounded'>
                     <div className=' pt-12 '>
                         {arr.map((obj)=>(
                             <div>
