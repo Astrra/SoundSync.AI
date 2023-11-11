@@ -9,6 +9,8 @@ import { Button } from "./ui/button";
 import { ModeToggle } from "./mode-toggle";
 import { MobileSidebar } from "./mobile-sidebar";
 import SearchInput from "./search-input";
+import Notification from "./notification";
+
 
 const font = Poppins({
     weight: "600",
@@ -27,6 +29,7 @@ export const Navbar = () => {
             <div className="flex items-center gap-x-3 mr-3">
                 
                 <ModeToggle/>
+                <Notification/>
                 <UserButton afterSignOutUrl="/"/>
 
             </div>
